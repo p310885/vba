@@ -53,6 +53,8 @@ Sub DeleteAndShiftLeftAllFiles()
         ' Skip the workbook that is running this macro.
         If LCase(sFullPath) <> LCase(ThisWorkbook.FullName) Then
 
+            MsgBox "Processing: " & sFile, vbInformation
+
             ' Attempt to open the workbook; skip it if it cannot be opened.
             On Error Resume Next
             Set wb = Workbooks.Open(Filename:=sFullPath, UpdateLinks:=False)
